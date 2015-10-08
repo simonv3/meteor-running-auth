@@ -1,0 +1,30 @@
+<form class="mr-auth-form" name="loginForm">
+  <!-- <div>
+    <h2>Login with:</h2>
+    <button>Twitter</button>
+    <button>Facebook</button>
+  </div> -->
+  <div ng-show="error" class="md-warn">
+    <small>
+      {{ error.reason }}
+      <a ng-if="error.error === 'verify-account'" ng-click="sendEmailVerification()">Re-send.
+      </a>
+    </small>
+  </div>
+  <input type="text"
+    ng-model="credentials.email"
+    placeholder="email"
+    aria-label="email"
+    required/>
+  <input type="password"
+    ng-model="credentials.password"
+    placeholder="password"
+    aria-label="password"
+    required/>
+  <button ng-disabled="!loginForm.$valid"
+    ng-click="login()">Submit</button>
+</form>
+<div class="mr-auth-extras">
+  <div><a href="/auth/reset-password">Forgot your password?</a></div>
+  <div><a href="/auth/register">Create an account.</a></div>
+</div>
