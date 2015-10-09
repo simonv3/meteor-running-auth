@@ -1,6 +1,6 @@
 Package.describe({
   name: 'simonv3:meteor-running-auth',
-  version: '0.3.0',
+  version: '0.3.1',
   // Brief, one-line summary of the package.
   summary: 'Auth module for Meteor Running',
   // URL to the Git repository containing the source code for this package.
@@ -23,14 +23,8 @@ Package.onUse(function(api) {
   api.addFiles('meteor-running-auth.js', 'client');
 
   var clientFiles = [
-    // 'client/config/accounts.js',
-    // 'client/js/directives/account-buttons.directive.ng.js',
-    // 'client/js/directives/account-buttons.ng.html',
-  //   'client/js/filters/displayName.js',
+    'client/config/accounts.js',
     'client/js/lib/routes.ng.js',
-  //   'client/js/navbar/navBarCtrl.ng.js',
-  //   'client/js/splash/controllers/splashCtrl.ng.js',
-  //   'client/js/splash/views/splash.ng.html',
     'client/js/users/controllers/loginCtrl.ng.js',
     'client/js/users/controllers/registerCtrl.ng.js',
     'client/js/users/controllers/resetPasswordCtrl.ng.js',
@@ -40,6 +34,8 @@ Package.onUse(function(api) {
     'client/js/users/directives/reset-password-form.directive.ng.js',
     'client/js/users/directives/register-form.ng.html',
     'client/js/users/directives/register-form.directive.ng.js',
+    'client/js/users/directives/register-form-inputs.ng.html',
+    'client/js/users/directives/register-form-inputs.directive.ng.js',
     'client/js/users/views/login.ng.html',
     'client/js/users/views/register-success.ng.html',
     'client/js/users/views/register.ng.html',
