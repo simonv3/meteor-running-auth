@@ -3,7 +3,6 @@ angular.module('meteor-running-auth').run(function($rootScope, $state) {
   Meteor.subscribe("userData");
 
   $rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
-    // We can catch the error thrown when the $requireUser promise is rejected
 
     // and redirect the user back to the main page
     if (error === 'UNAUTHORIZED' ||

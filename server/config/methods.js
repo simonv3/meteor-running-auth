@@ -19,5 +19,15 @@ Meteor.methods({
   resendVerificationEmail: function(email) {
     var relevantUser = Meteor.users.findOne({ "emails.address" : email });
     Accounts.sendVerificationEmail(relevantUser._id, email);
+  },
+  isAdmin: function() {
+    if (Meteor.user()) {
+      if (Meteor.user().is_admin)
+        return true;
+      var sandstorm = Meteor.user().services.sandstorm;
+      if (sandstorm && sandstorm.permissions.indexOf('owner') > -1)
+        return true;
+    }
+    return false;
   }
 });
