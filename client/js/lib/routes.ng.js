@@ -3,20 +3,23 @@ angular.module('meteor-running-auth').run(function($rootScope, $state) {
   Meteor.subscribe("userData");
 
   $rootScope.$on("$stateChangeError", function(event, toState, toParams, fromState, fromParams, error) {
-    console.log('state change error', error);
     // We can catch the error thrown when the $requireUser promise is rejected
 
     // and redirect the user back to the main page
     if (error === 'UNAUTHORIZED' ||
         error === 'AUTH_REQUIRED' ||
         error === 'ALREADY_LOGGED_IN') {
+      console.log('Uh oh, error', error, ', redirecting!')
       $state.go('index');
     }
 
+    if (error === 'NOT_SET_UP')
+      $state.go('setup');
   });
 
   $rootScope.$watch('currentUser', function() {
     if (!$rootScope.loggingIn && $rootScope.currentUser === null) {
+      console.log('No user was found, so redirecting')
       $state.go('index');
     }
   });
