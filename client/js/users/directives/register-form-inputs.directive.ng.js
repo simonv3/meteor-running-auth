@@ -8,6 +8,6 @@ angular.module('meteor-running-auth')
       link: function($scope) {
 
       },
-      templateUrl: 'simonv3_meteor-running-auth_client/js/users/directives/register-form.ng.html',
+      templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/directives/register-form.ng.html',
     };
   });

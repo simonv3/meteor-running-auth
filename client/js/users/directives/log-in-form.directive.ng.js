@@ -28,6 +28,6 @@ angular.module('meteor-running-auth')
           );
         };
       },
-      templateUrl: 'simonv3_meteor-running-auth_client/js/users/directives/log-in-form.ng.html',
+      templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/directives/log-in-form.ng.html',
     };
   });

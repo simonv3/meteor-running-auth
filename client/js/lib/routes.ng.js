@@ -34,7 +34,7 @@ angular.module('meteor-running-auth').config([
     $stateProvider
       .state('login', {
         url: '/auth/login',
-        templateUrl: 'simonv3_meteor-running-auth_client/js/users/views/login.ng.html',
+        templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/views/login.ng.html',
         controller: 'LoginCtrl',
         controllerAs: 'lc',
         resolve: {
@@ -48,7 +48,7 @@ angular.module('meteor-running-auth').config([
       })
       .state('register',{
         url: '/auth/register',
-        templateUrl: 'simonv3_meteor-running-auth_client/js/users/views/register.ng.html',
+        templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/views/register.ng.html',
         controller: 'RegisterCtrl',
         controllerAs: 'rc',
         resolve: {
@@ -62,7 +62,7 @@ angular.module('meteor-running-auth').config([
       })
       .state('register-success', {
         url: '/auth/register/success',
-        templateUrl: 'simonv3_meteor-running-auth_client/js/users/views/register-success.ng.html',
+        templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/views/register-success.ng.html',
         resolve: {
           // 'currentUser': ["$meteor", function($meteor){
           //   return $meteor.requireValidUser(function(user) {
@@ -74,7 +74,7 @@ angular.module('meteor-running-auth').config([
       })
       .state('reset-password-sent', {
         url: '/auth/reset-password-sent',
-        templateUrl: 'simonv3_meteor-running-auth_client/js/users/views/reset-password-email-sent.ng.html',
+        templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/views/reset-password-email-sent.ng.html',
         resolve: {
           // 'currentUser': ["$meteor", function($meteor){
           //   return $meteor.requireValidUser(function(user) {
@@ -86,13 +86,13 @@ angular.module('meteor-running-auth').config([
       })
       .state('reset-password', {
         url: '/auth/reset-password',
-        templateUrl: 'simonv3_meteor-running-auth_client/js/users/views/reset-password.ng.html',
+        templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/views/reset-password.ng.html',
         controller: 'ResetPasswordCtrl',
         controllerAs: 'rpc'
       })
       .state('reset-password-with-token', {
         url: '/auth/reset-password/:token',
-        templateUrl: 'simonv3_meteor-running-auth_client/js/users/views/reset-password.ng.html',
+        templateUrl: '/packages/simonv3:meteor-running-auth/client/js/users/views/reset-password.ng.html',
         controller: 'ResetPasswordCtrl',
         controllerAs: 'rpc'
       })
