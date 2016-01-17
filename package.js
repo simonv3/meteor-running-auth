@@ -1,6 +1,6 @@
 Package.describe({
   name: 'simonv3:meteor-running-auth',
-  version: '0.4.1',
+  version: '0.4.3',
   // Brief, one-line summary of the package.
   summary: 'Auth module for Meteor Running',
   // URL to the Git repository containing the source code for this package.

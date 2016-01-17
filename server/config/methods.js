@@ -23,13 +23,26 @@ Meteor.methods({
   },
 
   isAdmin: function() {
+    console.log('checking')
     if (Meteor.user()) {
+      console.log('there is a user')
       if (Meteor.user().is_admin)
         return true;
-      var sandstorm = Meteor.user().services.sandstorm;
-      if (sandstorm && sandstorm.permissions.indexOf('owner') > -1)
-        return true;
+      console.log('is not admin')
+
+      if (Meteor.settings.public.isInSandstorm) {
+        console.log('its in sandstorm')
+        if(Meteor.user()) {
+          console.log('theres a user')
+          var sandstorm = Meteor.user().services.sandstorm;
+          if (sandstorm && sandstorm.permissions.indexOf('owner') > -1) {
+            console.log('found the owner')
+            return true;
+          }
+        }
+      }
     }
+    console.log('returning false')
     return false;
   }
 });
